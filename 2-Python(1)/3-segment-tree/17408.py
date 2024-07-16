@@ -46,7 +46,39 @@ class Pair(tuple[int, int]):
 
 def main() -> None:
     # 구현하세요!
-    pass
+    input = sys.stdin.read().strip()
+    if not input:
+        return
+    data = input.split()
+    idx = 0
+
+    n = int(data[idx])
+    idx += 1
+    arr = list(map(int, data[idx:idx + n]))
+    idx += n
+    m = int(data[idx])
+    idx += 1
+
+    seg_tree: SegmentTree[Pair, Pair] = SegmentTree(n, Pair.f_merge, Pair.default())
+
+    for i in range(n):
+        seg_tree.update(i, Pair.f_conv(arr[i]))
+
+    result = []
+    for _ in range(m):
+        query_type = int(data[idx])
+        if query_type == 1:
+            i = int(data[idx + 1]) - 1
+            v = int(data[idx + 2])
+            seg_tree.update(i, Pair.f_conv(v))
+            idx += 3
+        elif query_type == 2:
+            l = int(data[idx + 1]) - 1
+            r = int(data[idx + 2])
+            result.append(str(seg_tree.query(l, r).sum()))
+            idx += 3
+
+    print("\n".join(result))
 
 
 if __name__ == "__main__":
