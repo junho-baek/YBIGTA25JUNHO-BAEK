@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <title>Hello</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script>
+        let state = true;
+
+        function myOnClick() {
+            const button = document.getElementById("imabutton");
+            button.textContent = state ? "hello world!" : "goodbye world!";
+            state = !state;
+            console.log(state);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Hello World!</h1>
+    <h2>Hello World!</h2>
+    <h3>Hello World!</h3>
+    this is line 1
+    and this is line 2<br>
+    and this is line 3
+    <u class="foo">and this is line 4</u><br>
+    <b>and this is line 5</b><br>
+    <u><b style="color: crimson; font-size: 40px;">and this is line 6</b></u><br>
+    <i>and this is line 7</i><br>
+    <br>
+    <div class="foo bar">
+        <p>asdfasdfasdf</p>
+        <button id="imabutton" onclick="myOnClick()"></button>
+    </div>
+    <script>
+        myOnClick();
+    </script>
+</body>
+
+</html>

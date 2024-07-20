@@ -1,0 +1,93 @@
+<html>
+
+<head>
+    <title>Hello</title>
+    <style>
+        * {
+            border: 1px solid lightgray;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: red;
+            margin-bottom: 0;
+        }
+
+        h1+* {
+            color: blue;
+            margin-top: 0;
+        }
+
+        table {
+            border: 1px solid;
+        }
+
+        table tr>th:first-child {
+            font-size: 40px;
+            color: green;
+        }
+
+        table tr:first-child {
+            font-size: 30px;
+            color: yellow;
+            background-color: black;
+        }
+
+        .foo {
+            width: 50%;
+            background-color: antiquewhite;
+            padding: 10px;
+        }
+
+        .bar {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .bar>p {
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hello World!</h1>
+    <h2>Hello World!</h2>
+    <h3>Hello World!</h3>
+    this is line 1
+    and this is line 2<br>
+    and this is line 3
+    <u class="foo">and this is line 4</u><br>
+    <b>and this is line 5</b><br>
+    <u><b style="color: crimson; font-size: 40px;">and this is line 6</b></u><br>
+    <i>and this is line 7</i><br>
+    <br>
+    <div class="foo bar">
+        <p>asdfasdfasdf</p>
+        <table>
+            <tr>
+                <th>11</th>
+                <th>12</th>
+                <th>13</th>
+            </tr>
+            <tr>
+                <th>21</th>
+                <th>22</th>
+                <th>23</th>
+            </tr>
+            <tr>
+                <th>31</th>
+                <th>32</th>
+                <th>33</th>
+            </tr>
+        </table>
+    </div>
+
+</body>
+
+</html>
