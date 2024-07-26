@@ -17,6 +17,5 @@ if __name__ == "__main__":
     parser = create_parser()
     args = parser.parse_args()
     
-    scraper = HanKyungScraper(start_date=args.start_date, end_date=args.end_date, output_file=args.output)
-    scraper.scrape_and_save()
-    print(f"기사 데이터를 JSON 파일로 저장했습니다: {args.output}")
+    scraper = HanKyungScraper(start_date=args.start_date, end_date=args.end_date, output=args.output)
+    scraper.scrape()
